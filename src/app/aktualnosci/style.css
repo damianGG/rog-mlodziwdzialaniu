@@ -1,0 +1,22 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-grow: 1;
+}
+
+.news-card {
+  min-height: 385px;
+}
+
+.card-body {
+  flex-grow: 1;
+}
+
+.post-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Ogranicz do 4 linii */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

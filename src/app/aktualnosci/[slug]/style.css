@@ -1,0 +1,14 @@
+.card-img-top {
+  text-align: center;
+}
+.card-img-top img {
+  padding-top: 4rem;
+}
+@media (max-width: 767px) {
+  .w-md-100 {
+    width: 100% !important;
+  }
+  .card-img-top img {
+    padding-top: 0;
+  }
+}
