@@ -14,8 +14,8 @@ import PopupForm from "@/components/blocks/form/popupform";
 const manrope = Manrope({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Łódzka Strefa Integracji!",
-  description: "Łódzka Strefa Integracji!",
+  title: "Młodzi w działaniu",
+  description: "Młodzi w działaniu",
 };
 
 export default function RootLayout({
