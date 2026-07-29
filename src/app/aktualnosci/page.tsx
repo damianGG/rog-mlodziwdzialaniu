@@ -70,7 +70,36 @@ export default function NewsPage() {
         </div>
       </section>
 
-      <div className="container mb-15 mt-15">
+      <div className="container mt-5 mb-5">
+        <div className="card shadow-lg">
+          <div className="card-body p-8">
+            <h2 className="h2 mb-4">Rusza nabór do projektu „Moc Możliwości – Młodzi w Działaniu!”</h2>
+            <p>
+              Zapraszamy osoby w wieku 18–29 lat z województwa łódzkiego do udziału w projekcie.
+            </p>
+
+            <p className="fw-bold mt-4 mb-2">Oferujemy:</p>
+            <ul className="icon-list bullet-bg bullet-soft-primary mb-0">
+              <li><i className="uil uil-check" />indywidualne doradztwo zawodowe i psychologiczne,</li>
+              <li className="mt-2"><i className="uil uil-check" />bezpłatne szkolenia zawodowe,</li>
+              <li className="mt-2"><i className="uil uil-check" />staże zawodowe,</li>
+              <li className="mt-2"><i className="uil uil-check" />pomoc w znalezieniu pracy,</li>
+              <li className="mt-2"><i className="uil uil-check" />wsparcie prawne,</li>
+              <li className="mt-2"><i className="uil uil-check" />możliwość zdobycia kwalifikacji.</li>
+            </ul>
+
+            <p className="mt-4">Udział w projekcie jest bezpłatny.</p>
+
+            <div className="mt-5">
+              <Link href="/rekrutacja" className="btn btn-primary rounded-pill">
+                Więcej o naborze do projektu „Moc Możliwości – Młodzi w Działaniu!”
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container mb-15">
         <div className="row gx-0 gx-md-3 gx-xl-8 gy-8 align-items-center">
           {sortedData.length > 0 ? (
             sortedData.map((article) => {
