@@ -89,4 +89,30 @@ export const aktualnosci: Aktualnosc[] = [
       },
     ],
   },
+  {
+    id: 5,
+    kod: 'NOWE',
+    podtytul: 'PLACEHOLDER - uzupełnij podtytuł',
+    tytul: 'PLACEHOLDER - uzupełnij tytuł',
+    data: '2026-08-04',
+    opis: 'PLACEHOLDER - uzupełnij opis.',
+    pliki: [
+      {
+        nazwa: 'Plik 1 - uzupełnij nazwę.pdf',
+        url: 'PLACEHOLDER_URL_1',
+      },
+      {
+        nazwa: 'Plik 2 - uzupełnij nazwę.pdf',
+        url: 'PLACEHOLDER_URL_2',
+      },
+      {
+        nazwa: 'Plik 3 - uzupełnij nazwę.pdf',
+        url: 'PLACEHOLDER_URL_3',
+      },
+      {
+        nazwa: 'Plik 4 - uzupełnij nazwę.pdf',
+        url: 'PLACEHOLDER_URL_4',
+      },
+    ],
+  },
 ];
