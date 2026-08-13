@@ -10,6 +10,14 @@ export type Aktualnosc = {
 
 export const aktualnosci: Aktualnosc[] = [
   {
+    id: 5,
+    kod: 'INFO',
+    podtytul: 'Biuro Projektu Nieczynne',
+    tytul: 'Biuro Projektu Nieczynne',
+    data: '2026-08-14',
+    opis: 'Informujemy, że w dniu 14.08.2026 r. Biuro Projektu będzie nieczynne.\nZapraszamy ponownie w poniedziałek, 17.08.2026 r.',
+  },
+  {
     id: 1,
     kod: 'IRŚ',
     podtytul: 'Opracowanie Indywidualnej Ścieżki Reintegracji',
