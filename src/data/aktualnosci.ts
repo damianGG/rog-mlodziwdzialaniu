@@ -25,7 +25,7 @@ export const aktualnosci: Aktualnosc[] = [
       },
       {
         nazwa: 'Rozeznanie rynku na IŚR.pdf',
-        url: 'https://github.com/user-attachments/files/30481466/Rozeznanie.rynku.na.ISR.pdf',
+        url: 'https://raw.githubusercontent.com/damianGG/rog-mlodziwdzialaniu/main/rozeznanie_rynku_na_i%C5%9Br%20(1).pdf',
       },
     ],
   },
@@ -45,7 +45,7 @@ export const aktualnosci: Aktualnosc[] = [
       },
       {
         nazwa: 'Rozeznanie rynku na IPPS.pdf',
-        url: 'https://github.com/user-attachments/files/30481464/Rozeznanie.rynku.na.IPPS.pdf',
+        url: 'https://raw.githubusercontent.com/damianGG/rog-mlodziwdzialaniu/main/rozeznanie_rynku_na_ipps%20(1).pdf',
       },
     ],
   },
@@ -65,7 +65,7 @@ export const aktualnosci: Aktualnosc[] = [
       },
       {
         nazwa: 'Rozeznanie rynku na IPW.pdf',
-        url: 'https://github.com/user-attachments/files/30481462/Rozeznanie.rynku.na.IPW.pdf',
+        url: 'https://raw.githubusercontent.com/damianGG/rog-mlodziwdzialaniu/main/rozeznanie_rynku_na_ipw%20(1).pdf',
       },
     ],
   },
@@ -85,7 +85,7 @@ export const aktualnosci: Aktualnosc[] = [
       },
       {
         nazwa: 'Rozeznanie rynku na IPP.pdf',
-        url: 'https://github.com/user-attachments/files/30481460/Rozeznanie.rynku.na.IPP.pdf',
+        url: 'https://raw.githubusercontent.com/damianGG/rog-mlodziwdzialaniu/main/rozeznanie_rynku_na_ipp%20(1).pdf',
       },
     ],
   },
