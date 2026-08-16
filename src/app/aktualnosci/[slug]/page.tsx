@@ -1,13 +1,14 @@
 import { notFound } from 'next/navigation';
 import { format } from 'date-fns';
 import { pl } from 'date-fns/locale';
-import { aktualnosci } from '@/data/aktualnosci';
+import { getAktualnoscBySlug } from '@/lib/aktualnosci-repo';
 import DownloadElement from '@/components/reuseable/process-list/DownloadElement';
 import '../style.css';
 
-export default function BlogDetailsTemplate({ params }: { params: { slug: string } }) {
-  const id = Number(params.slug.split('-')[0]);
-  const article = aktualnosci.find((item) => item.id === id);
+export const revalidate = 0;
+
+export default async function BlogDetailsTemplate({ params }: { params: { slug: string } }) {
+  const article = await getAktualnoscBySlug(params.slug);
 
   if (!article) {
     notFound();
