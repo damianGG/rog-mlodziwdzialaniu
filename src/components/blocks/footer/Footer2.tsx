@@ -21,7 +21,7 @@ export default function Footer2() {
 
               <div className="col-md-3">
                 <div className="widget">
-                  <p className="widget-title fs-15 fw-bold"><i className="uil uil-map me-2 fs-25" ></i> Adres (Biuro projektu)</p>
+                  <p className="widget-title fs-15 fw-bold"><i className="uil uil-map me-2 fs-25" ></i> Siedziba Róg Consulting &amp; Business Training Sp. z o. o.</p>
                   <address>
                     Aleja Niepodległości 4 lok. 204<br className="d-none d-md-block" />96-100 Skierniewice
                   </address>
@@ -41,8 +41,8 @@ export default function Footer2() {
                 <div className="widget">
                   <p className="widget-title fs-15 fw-bold"><i className="uil uil-envelope fs-25 me-2 "></i> e-mail</p>
 
-                  <Link href="mailto:strefaintegracji@rogszkolenia.pl" className="link-primary">
-                    strefaintegracji@rogszkolenia.pl
+                  <Link href="mailto:mlodziwdzialaniu@rogszkolenia.pl" className="link-primary">
+                    mlodziwdzialaniu@rogszkolenia.pl
                   </Link>
                   <br className="d-none d-md-block" />
                 </div>
@@ -51,7 +51,7 @@ export default function Footer2() {
                 <div className="widget">
                   <p className="widget-title fs-15 fw-bold">
                     <i className="uil uil-facebook-f fs-25" /> facebook</p>
-                  <Link href="https://www.facebook.com/profile.php?id=61575229461329" className="link-primary" target="_blank">Róg Consulting & Training Business Sp. z o. o.</Link>
+                  <Link href="https://www.facebook.com/profile.php?id=61575229461329" className="link-primary" target="_blank">Siedziba Róg Consulting &amp; Business Training Sp. z o. o.</Link>
 
                 </div>
               </div>
