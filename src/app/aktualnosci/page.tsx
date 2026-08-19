@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { format } from 'date-fns';
 import { pl } from 'date-fns/locale';
-import { aktualnosci } from '@/data/aktualnosci';
+import { listAktualnosci } from '@/lib/aktualnosci-repo';
 import './style.css';
 
 export const metadata: Metadata = {
@@ -10,27 +10,10 @@ export const metadata: Metadata = {
   description: 'Aktualności o projekcie',
 };
 
-function createSlug(text: string): string {
-  const polishChars: { [key: string]: string } = {
-    ą: 'a', ć: 'c', ę: 'e', ł: 'l', ń: 'n', ó: 'o', ś: 's', ź: 'z', ż: 'z',
-    Ą: 'a', Ć: 'c', Ę: 'e', Ł: 'l', Ń: 'n', Ó: 'o', Ś: 's', Ź: 'z', Ż: 'z',
-  };
+export const revalidate = 0;
 
-  return text
-    .split('')
-    .map((char) => polishChars[char] || char)
-    .join('')
-    .toLowerCase()
-    .replace(/[^a-z0-9\s-]/g, '')
-    .trim()
-    .replace(/\s+/g, '-')
-    .replace(/-+/g, '-');
-}
-
-export default function NewsPage() {
-  const sortedData = [...aktualnosci].sort(
-    (a, b) => new Date(b.data).getTime() - new Date(a.data).getTime()
-  );
+export default async function NewsPage() {
+  const sortedData = await listAktualnosci();
 
   return (
     <>
@@ -103,8 +86,7 @@ export default function NewsPage() {
         <div className="row gx-0 gx-md-3 gx-xl-8 gy-8 align-items-center">
           {sortedData.length > 0 ? (
             sortedData.map((article) => {
-              const slug = createSlug(article.tytul);
-              const articleUrl = `/aktualnosci/${article.id}-${slug}`;
+              const articleUrl = `/aktualnosci/${article.slug}`;
 
               return (
                 <div className="col-md-4" key={article.id}>
