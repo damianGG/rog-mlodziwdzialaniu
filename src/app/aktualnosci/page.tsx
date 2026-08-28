@@ -53,6 +53,14 @@ export default async function NewsPage() {
         </div>
       </section>
 
+      <div className="container mt-5">
+        <div className="alert alert-warning mb-0" role="alert">
+          <h2 className="h3 mb-3">Biuro Projektu nieczynne</h2>
+          <p className="mb-2">Informujemy, że w dniu 14.08.2026 r. Biuro Projektu będzie nieczynne.</p>
+          <p className="mb-0">Zapraszamy ponownie w poniedziałek, 17.08.2026 r.</p>
+        </div>
+      </div>
+
       <div className="container mt-5 mb-5">
         <div className="card shadow-lg">
           <div className="card-body p-8">
