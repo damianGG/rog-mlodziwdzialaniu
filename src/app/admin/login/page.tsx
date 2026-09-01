@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { loginAction } from "../actions"
 
 export const metadata: Metadata = {
-  title: "Logowanie do panelu | Łódzka Strefa Integracji",
+  title: "Logowanie do panelu | Młodzi w działaniu",
   robots: { index: false, follow: false },
 }
 

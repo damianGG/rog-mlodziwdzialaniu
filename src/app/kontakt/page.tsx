@@ -32,15 +32,6 @@ export default function Kontakt() {
             <div className="container mt-5 mb-15">
                 <div className="row">
                     <div className="col-lg-10 mx-auto">
-                        <div className="card shadow-lg mb-6">
-                            <div className="card-body p-6">
-                                <h2 className="h3 mb-3">Biuro projektu (Rzeszów)</h2>
-                                <p className="mb-1"><strong>Adres:</strong> Rzeszów, ul. Kazimierza Pułaskiego 9A</p>
-                                <p className="mb-1"><strong>Tel:</strong> +48 786 444 815</p>
-                                <p className="mb-0"><strong>E-mail:</strong> <a href="mailto:rogszkolenia@gmail.com">rogszkolenia@gmail.com</a></p>
-                            </div>
-                        </div>
-
                         <div className="card shadow-lg">
                             <div className="card-body p-6">
                                 <h2 className="h3 mb-3">Biuro Projektu</h2>
@@ -48,7 +39,8 @@ export default function Kontakt() {
                                 <p className="mb-1">Biuro projektu czynne jest od poniedziałku do piątku w godzinach 8:00 - 16:00</p>
                                 <p className="mb-3">(istnieje możliwość umówienia się na inne godziny spotkania)</p>
                                 <p className="mb-1"><strong>Tel:</strong> +48 786 444 815</p>
-                                <p className="mb-0"><strong>E-mail:</strong> <a href="mailto:strefaintegracji@rogszkolenia.pl">strefaintegracji@rogszkolenia.pl</a></p>
+                                <p className="mb-1"><strong>E-mail:</strong> <a href="mailto:mlodziwdzialaniu@rogszkolenia.pl">mlodziwdzialaniu@rogszkolenia.pl</a></p>
+                                <p className="mb-0"><strong>Strona WWW:</strong> <a href="https://www.mlodziwdzialaniu.pl/" target="_blank" rel="noopener noreferrer">www.mlodziwdzialaniu.pl</a></p>
                             </div>
                         </div>
 

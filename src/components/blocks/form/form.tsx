@@ -40,7 +40,7 @@ export default function ContactForm() {
         const mailText = `Imię: ${values.name}\nEmail: ${values.email}\nNumer telefonu: ${values.phone}`;
         const response = await sendMail({
             email: values.email,
-            subject: 'Formularz kontaktowy ze strony lodzkastrefaintegracji.pl',
+            subject: 'Formularz kontaktowy ze strony mlodziwdzialaniu.pl',
             text: mailText,
         });
         if (response?.messageId) {
