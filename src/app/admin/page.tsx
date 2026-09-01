@@ -7,7 +7,7 @@ import DeleteAktualnoscButton from "@/components/admin/DeleteAktualnoscButton"
 import { logoutAction } from "./actions"
 
 export const metadata: Metadata = {
-  title: "Panel administracyjny | Łódzka Strefa Integracji",
+  title: "Panel administracyjny | Młodzi w działaniu",
   robots: { index: false, follow: false },
 }
 

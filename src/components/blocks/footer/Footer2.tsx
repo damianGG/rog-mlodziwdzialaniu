@@ -41,10 +41,18 @@ export default function Footer2() {
                 <div className="widget">
                   <p className="widget-title fs-15 fw-bold"><i className="uil uil-envelope fs-25 me-2 "></i> e-mail</p>
 
-                  <Link href="mailto:strefaintegracji@rogszkolenia.pl" className="link-primary">
-                    strefaintegracji@rogszkolenia.pl
+                  <Link href="mailto:mlodziwdzialaniu@rogszkolenia.pl" className="link-primary">
+                    mlodziwdzialaniu@rogszkolenia.pl
                   </Link>
                   <br className="d-none d-md-block" />
+                </div>
+              </div>
+              <div className="col-md-4 col-lg-3">
+                <div className="widget">
+                  <p className="widget-title fs-15 fw-bold"><i className="uil uil-globe fs-25 me-2" /> Strona WWW</p>
+                  <Link href="https://www.mlodziwdzialaniu.pl/" className="link-primary" target="_blank">
+                    www.mlodziwdzialaniu.pl
+                  </Link>
                 </div>
               </div>
               <div className="col-md-4 col-lg-3">
