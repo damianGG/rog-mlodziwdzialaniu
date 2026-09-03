@@ -33,7 +33,7 @@ export function getRecruitmentDocumentPath(
 ): string {
   const safeFilename = filename
     .replace(/[/\\]/g, "-")
-    .replace(/[^\p{L}\p{N}._ -]/gu, "-")
+    .replace(/[\x00-\x1F\x7F]/g, "-")
     .replace(/^-+|-+$/g, "")
 
   return `${PREFIX}${category}/${safeFilename || "dokument"}`
