@@ -1,13 +1,12 @@
 
-import Process7 from "@/components/blocks/process/Process7";
-import { listRecruitmentDocuments } from "@/lib/recruitment-documents";
+import { getRecruitmentContent, listRecruitmentDocuments } from "@/lib/recruitment-documents";
 
 
 
 export const dynamic = "force-dynamic"
 
 export default async function News() {
-    const documents = await listRecruitmentDocuments();
+    const [content, documents] = await Promise.all([getRecruitmentContent(), listRecruitmentDocuments()]);
     const blackAndWhiteDocuments = documents.filter((document) => document.category === "czarno-biale");
     const colourDocuments = documents.filter((document) => document.category === "kolor");
 
@@ -41,20 +40,48 @@ export default async function News() {
                     <div className="row">
                         <div className="col-md-9 col-lg-7 col-xl-5 mx-auto">
                             <h1 className="display-1 mb-3" style={{ color: 'white' }}>
-                                Rekrutacja
+                                {content.title}
                             </h1>
-                            <p className="lead px-xxl-10" style={{ color: 'white' }}>Sprawdź jak wygląda proces rekrutacji</p>
+                            <p className="lead px-xxl-10" style={{ color: 'white' }}>{content.introduction}</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <Process7 />
+            <section className="wrapper">
+                <div className="container py-12 py-md-14">
+                    <div className="row mb-10">
+                        <div className="col-lg-8 mx-auto">
+                            <h2 className="display-4 text-center mb-5">{content.eligibilityTitle}</h2>
+                            <ul className="icon-list bullet-bg bullet-soft-primary mb-0">
+                                {content.eligibilityItems.map((item, index) => (
+                                    <li className={index > 0 ? "mt-2" : ""} key={`${item}-${index}`}><i className="uil uil-check" />{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                    <h2 className="display-4 text-center mb-8">{content.stepsTitle}</h2>
+                    <div className="row justify-content-center g-4">
+                        {content.steps.map((step, index) => (
+                            <div className="col-md-6 col-lg-4 text-center position-relative" key={`${step.title}-${index}`}>
+                                <div className="card shadow-sm h-100">
+                                    <div className="card-body p-5">
+                                        <span className="btn btn-circle btn-primary disabled mb-4">{index + 1}</span>
+                                        <h3 className="h4">{step.title}</h3>
+                                        <p className="mb-0">{step.description}</p>
+                                    </div>
+                                </div>
+                                {step.showArrow && index < content.steps.length - 1 ? <i className="uil uil-arrow-right fs-32 text-primary d-none d-lg-block position-absolute top-50 end-0 translate-middle-y" /> : null}
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
             {(blackAndWhiteDocuments.length > 0 || colourDocuments.length > 0) && (
                 <section className="wrapper bg-light">
                     <div className="container py-12 py-md-14">
                         <div className="row">
                             <div className="col-lg-10 mx-auto text-center">
-                                <h2 className="display-4 mb-8">Dokumenty rekrutacyjne do pobrania</h2>
+                                <h2 className="display-4 mb-8">{content.documentsTitle}</h2>
                             </div>
                         </div>
                         <div className="row g-4">

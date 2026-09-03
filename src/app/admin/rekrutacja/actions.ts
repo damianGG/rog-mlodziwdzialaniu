@@ -4,6 +4,8 @@ import { del, put } from "@vercel/blob"
 import { revalidatePath } from "next/cache"
 import {
   getRecruitmentDocumentPath,
+  CONTENT_PATH,
+  isRecruitmentContent,
   listRecruitmentDocuments,
   type RecruitmentDocumentCategory,
 } from "@/lib/recruitment-documents"
@@ -33,6 +35,26 @@ export async function uploadRecruitmentDocumentAction(formData: FormData): Promi
 
   revalidatePath("/admin/rekrutacja")
   revalidatePath("/rekrutacja")
+}
+
+export async function updateRecruitmentContentAction(formData: FormData): Promise<void> {
+  const rawContent = formData.get("content")
+  if (typeof rawContent !== "string") return
+
+  try {
+    const content = JSON.parse(rawContent)
+    if (!isRecruitmentContent(content)) return
+
+    await put(CONTENT_PATH, JSON.stringify(content), {
+      access: "public",
+      allowOverwrite: true,
+      contentType: "application/json",
+    })
+    revalidatePath("/admin/rekrutacja")
+    revalidatePath("/rekrutacja")
+  } catch {
+    return
+  }
 }
 
 export async function deleteRecruitmentDocumentAction(formData: FormData): Promise<void> {

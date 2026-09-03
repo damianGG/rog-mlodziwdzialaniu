@@ -1,7 +1,8 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { listRecruitmentDocuments, type RecruitmentDocumentCategory } from "@/lib/recruitment-documents"
-import { deleteRecruitmentDocumentAction, uploadRecruitmentDocumentAction } from "./actions"
+import RecruitmentContentForm from "@/components/admin/RecruitmentContentForm"
+import { getRecruitmentContent, listRecruitmentDocuments, type RecruitmentDocumentCategory } from "@/lib/recruitment-documents"
+import { deleteRecruitmentDocumentAction, updateRecruitmentContentAction, uploadRecruitmentDocumentAction } from "./actions"
 
 export const metadata: Metadata = {
   title: "Dokumenty rekrutacyjne | Panel administracyjny",
@@ -16,20 +17,23 @@ const categories: { value: RecruitmentDocumentCategory; label: string }[] = [
 ]
 
 export default async function RecruitmentDocumentsAdminPage() {
-  const documents = await listRecruitmentDocuments()
+  const [content, documents] = await Promise.all([getRecruitmentContent(), listRecruitmentDocuments()])
 
   return (
     <div className="container py-5">
       <div className="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
         <div>
-          <h1 className="h2 mb-1">Dokumenty rekrutacyjne</h1>
-          <p className="text-muted mb-0">Dodawaj dokumenty do pobrania na stronie rekrutacji.</p>
+          <h1 className="h2 mb-1">Rekrutacja</h1>
+          <p className="text-muted mb-0">Edytuj treść strony rekrutacji oraz zarządzaj dokumentami do pobrania.</p>
         </div>
         <Link href="/admin" className="btn btn-outline-secondary rounded-pill">
           Wróć do panelu
         </Link>
       </div>
 
+      <RecruitmentContentForm content={content} action={updateRecruitmentContentAction} />
+
+      <h2 className="h4 mb-3">Dokumenty do pobrania</h2>
       <div className="row g-4">
         {categories.map((category) => {
           const categoryDocuments = documents.filter((document) => document.category === category.value)
