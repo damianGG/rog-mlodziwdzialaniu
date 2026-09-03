@@ -21,11 +21,14 @@ export default async function AdminDashboardPage() {
       <div className="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
         <div>
           <h1 className="h2 mb-1">Panel administracyjny</h1>
-          <p className="text-muted mb-0">Zarządzaj aktualnościami wyświetlanymi na stronie.</p>
+          <p className="text-muted mb-0">Zarządzaj aktualnościami i dokumentami wyświetlanymi na stronie.</p>
         </div>
         <div className="d-flex gap-2">
           <Link href="/admin/aktualnosci/new" className="btn btn-primary rounded-pill">
             + Nowa aktualność
+          </Link>
+          <Link href="/admin/rekrutacja" className="btn btn-outline-primary rounded-pill">
+            Dokumenty rekrutacyjne
           </Link>
           <form action={logoutAction}>
             <button type="submit" className="btn btn-outline-secondary rounded-pill">
