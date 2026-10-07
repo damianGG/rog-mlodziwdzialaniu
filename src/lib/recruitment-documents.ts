@@ -9,6 +9,13 @@ export type RecruitmentDocument = Awaited<ReturnType<typeof list>>["blobs"][numb
 
 const PREFIX = "rekrutacja/"
 const CONTENT_PATH = `${PREFIX}content.json`
+const MOJIBAKE_PATTERN = /[\u00C2-\u00F4][\u0080-\u00BF]/
+
+function normalizeFilename(filename: string): string {
+  return MOJIBAKE_PATTERN.test(filename)
+    ? Buffer.from(filename, "latin1").toString("utf8")
+    : filename
+}
 
 export type RecruitmentStep = {
   title: string
@@ -57,7 +64,7 @@ export async function listRecruitmentDocuments(): Promise<RecruitmentDocument[]>
       return {
         ...blob,
         category,
-        name: nameParts.join("/"),
+        name: normalizeFilename(nameParts.join("/")),
       }
     })
     .filter((document): document is RecruitmentDocument => document !== null)
@@ -107,7 +114,7 @@ export function getRecruitmentDocumentPath(
   category: RecruitmentDocumentCategory,
   filename: string,
 ): string {
-  const safeFilename = filename
+  const safeFilename = normalizeFilename(filename)
     .replace(/[/\\]/g, "-")
     .replace(/[\x00-\x1F\x7F]/g, "-")
     .replace(/^-+|-+$/g, "")
