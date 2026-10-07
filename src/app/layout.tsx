@@ -11,7 +11,7 @@ import PopupForm from "@/components/blocks/form/popupform";
 
 
 
-const manrope = Manrope({ subsets: ["latin"] });
+const manrope = Manrope({ subsets: ["latin", "latin-ext"] });
 
 export const metadata: Metadata = {
   title: "Młodzi w działaniu!",
